@@ -48,20 +48,20 @@ mkvirtualenv py2-data
 workon py2-data
 
 # Install Python data modules
-pip install numpy
-pip install scipy
-pip install matplotlib
-pip install pandas
-pip install sympy
-pip install nose
-pip install unittest2
-pip install seaborn
-pip install scikit-learn
-pip install "ipython[all]"
-pip install bokeh
-pip install Flask
-pip install sqlalchemy
-pip install mysql-python
+# pip install numpy
+# pip install scipy
+# pip install matplotlib
+# pip install pandas
+# pip install sympy
+# pip install nose
+# pip install unittest2
+# pip install seaborn
+# pip install scikit-learn
+# pip install "ipython[all]"
+# pip install bokeh
+# pip install Flask
+# pip install sqlalchemy
+# pip install mysql-python
 
 ###############################################################################
 # Python 3 Virtual Enviroment                                                 #
@@ -75,21 +75,21 @@ mkvirtualenv --python=/usr/local/bin/python3 py3-data
 workon py3-data
 
 # Install Python data modules
-pip install numpy
-pip install scipy
-pip install matplotlib
-pip install pandas
-pip install sympy
-pip install nose
-pip install unittest2
-pip install seaborn
-pip install scikit-learn
-pip install "ipython[all]"
-pip install bokeh
-pip install Flask
-pip install sqlalchemy
-#pip install mysql-python  # Python 2 only, use mysqlclient instead
-pip install mysqlclient
+# pip install numpy
+# pip install scipy
+# pip install matplotlib
+# pip install pandas
+# pip install sympy
+# pip install nose
+# pip install unittest2
+# pip install seaborn
+# pip install scikit-learn
+# pip install "ipython[all]"
+# pip install bokeh
+# pip install Flask
+# pip install sqlalchemy
+# #pip install mysql-python  # Python 2 only, use mysqlclient instead
+# pip install mysqlclient
 
 echo "------------------------------"
 echo "Script completed."
