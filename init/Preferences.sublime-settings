@@ -1,5 +1,6 @@
 {
-    "color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+    "color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+    "theme": "Cobalt2.sublime-theme", #Cobalt2 theme for better folder icons 
     "default_encoding": "UTF-8",
     "default_line_ending": "unix",
     "detect_indentation": false,
@@ -21,7 +22,7 @@
         "node_modules"
     ],
     "font_face": "Monaco",
-    "font_size": 10,
+    "font_size": 14,
     "highlight_modified_tabs": true,
     "hot_exit": false,
     "line_padding_bottom": 5,
@@ -39,3 +40,4 @@
     "trim_trailing_white_space_on_save": true,
     "word_wrap": true
 }
+
