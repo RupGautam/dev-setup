@@ -95,6 +95,14 @@ function runDots() {
             echo ""
             ./android.sh
         fi
+        if [ $ARG == "custom" ] || [ $ARG == "all" ]; then
+            # Run the custom.sh Script
+            echo "------------------------------"
+            echo "Setting up custom script."
+            echo "------------------------------"
+            echo ""
+            ./custom.sh
+        fi
     done
 
     echo "------------------------------"
