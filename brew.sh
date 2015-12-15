@@ -43,14 +43,14 @@ sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 # Change to the new shell, prompts for password
 chsh -s /usr/local/bin/bash
 
+# Install git and set global config variables
+brew install git
+git.config --global user.name “Rup Gautam”
+git.config --global user.email “rup.gautam@yahoo.com”
+git.config --global credential.helper osxkeychain
+
 # Install `wget` with IRI support.
 brew install wget --with-iri
-
-# Install RingoJS and Narwhal.
-# Note that the order in which these are installed is important;
-# see http://git.io/brew-narwhal-ringo.
-#brew install ringojs
-#brew install narwhal
 
 # Install Python
 brew install python
@@ -74,12 +74,12 @@ brew install aircrack-ng
 brew install bfg
 brew install binutils
 brew install binwalk
-brew install cifer
+#brew install cifer
 #brew install dex2jar
 brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install hashpump
+#brew install fcrackzip
+#brew install foremost
+#brew install hashpump
 #brew install hydra
 #brew install john
 #brew install knock
@@ -99,7 +99,6 @@ brew install xz
 brew install ack
 brew install dark-mode
 #brew install exiv2
-brew install git
 brew install git-lfs
 brew install git-flow
 brew install git-extras
@@ -117,6 +116,10 @@ brew install tree
 brew install webkit2png
 brew install zopfli
 brew install pkg-config libffi
+brew install id3tool
+brew install rtmpdump
+brew install ffmpeg --with-fdk-aac --with-libvorbis --with-libvpx --with-theora
+
 #brew install pandoc
 
 # Lxml and Libxslt
@@ -153,6 +156,24 @@ brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" evernote
+brew cask install --appdir="/Applications" teamviewer
+brew cask install --appdir="/Applications" handbrake
+brew cask install --appdir="/Applications" appcleaner
+brew cask install --appdir="/Applications" caffeine
+brew cask install --appdir="/Applications" chromecast
+brew cask install --appdir="/Applications" mysqlworkbench
+brew cask install --appdir="/Applications" mac2imgur
+brew cask install --appdir="/Applications" bittorrent
+brew cask install --appdir="/Applications" cyberduck
+brew cask install --appdir="/Applications" timemachinescheduler
+brew cask install --appdir="/Applications" wireshark
+brew cask install --appdir="/Applications" namechanger
+brew cask install --appdir="/Applications" sketch
+brew cask install --appdir="/Applications"
+
+
+
+
 #brew cask install --appdir="/Applications" gimp
 #brew cask install --appdir="/Applications" inkscape
 
@@ -171,3 +192,7 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch 
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+# Installing private/non-supported homebrew apps | tap private repo
+# brew tap repo-name/homebrew-cask https://github.com/user/repo-name.git;
+# brew cask install repo-name;
