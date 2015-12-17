@@ -134,7 +134,7 @@ brew install heroku-toolbelt
 heroku update
 
 # Install Cask
-brew install caskroom/cask/brew-cask
+brew install caskroom/cask/brew-cask 
 
 # Core casks
 #brew cask install --appdir="/Applications" alfred
@@ -170,7 +170,7 @@ brew cask install --appdir="/Applications" timemachinescheduler
 brew cask install --appdir="/Applications" wireshark
 brew cask install --appdir="/Applications" namechanger
 brew cask install --appdir="/Applications" sketch
-brew cask install --appdir="/Applications"
+brew cask install --appdir="/Applications" microsoft-office
 
 
 
