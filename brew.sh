@@ -77,6 +77,7 @@ brew install binutils
 brew install htop
 brew install nmap
 brew install fdupes #find dup files
+brew install node
 
 # Install other useful binaries.
 brew install dark-mode
@@ -142,9 +143,10 @@ brew cask install --appdir="/Applications" sketch
 brew cask install --appdir="/Applications" microsoft-office
 
 # Most have CLIs'
-brew install linode-cli #manage linode nodes from terminal
-npm install -g cloudflare-cli #manage domain names from terminal
-gem install tugboat #manage DO droplets from terminal
+brew tap linode/cli && brew update #manage linode nodes from terminal
+brew install linode-cli #linodecli
+sudo npm install -g cloudflare-cli #manage domain names from terminal
+sudo gem install tugboat #manage DO droplets from terminal
 
 # Powerline fonts
 git clone https://github.com/powerline/fonts.git && cd fonts
