@@ -70,7 +70,7 @@ function runDots() {
         #     echo "------------------------------"
         #     echo ""
         #     ./aws.sh
-        fi
+        # fi
         if [ $ARG == "datastores" ] || [ $ARG == "all" ]; then
             # Run the datastores.sh Script
             echo "------------------------------"
