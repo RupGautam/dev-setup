@@ -59,6 +59,8 @@ brew install python3
 
 # Install more recent versions of some OS X tools.
 brew install vim --override-system-vi
+brew install nano #should install 2.4+ 
+# update $PATH export PATH=/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
