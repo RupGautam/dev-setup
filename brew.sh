@@ -134,7 +134,9 @@ brew install heroku-toolbelt
 heroku update
 
 # Install Cask
-brew install caskroom/cask/brew-cask 
+brew install caskroom/cask/brew-cask
+brew tap caskroom/versions # need to add tap before installing different versions of apps. e.g: sublime-text2 sublime-text3
+brew update 
 
 # Core casks
 #brew cask install --appdir="/Applications" alfred
