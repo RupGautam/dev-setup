@@ -35,6 +35,7 @@ brew install gnu-sed --with-default-names
 # Install Bash 4.
 brew install bash
 brew tap homebrew/versions
+brew tap homebrew/science
 brew install bash-completion2
 # We installed the new shell, now we have to activate it
 echo "Adding the newly installed shell to the list of allowed shells"
@@ -73,61 +74,27 @@ brew install woff2
 brew install aircrack-ng
 brew install bfg
 brew install binutils
-brew install binwalk
-#brew install cifer
-#brew install dex2jar
-brew install dns2tcp
-#brew install fcrackzip
-#brew install foremost
-#brew install hashpump
-#brew install hydra
-#brew install john
-#brew install knock
-#brew install netpbm
+brew install htop
 brew install nmap
-brew install pngcheck
-#brew install socat
-#brew install sqlmap
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install xpdf
-brew install xz
 brew install fdupes #find dup files
 
 # Install other useful binaries.
-brew install ack
 brew install dark-mode
-#brew install exiv2
 brew install git-lfs
 brew install git-flow
 brew install git-extras
 brew install imagemagick --with-webp
-brew install lua
-brew install lynx
-brew install p7zip
-brew install pigz
 brew install pv
 brew install rename
-#brew install rhino
 brew install speedtest_cli
 brew install ssh-copy-id
 brew install tree
-brew install webkit2png
-brew install zopfli
 brew install pkg-config libffi
 brew install id3tool
 brew install rtmpdump
 brew install ffmpeg --with-fdk-aac --with-libvorbis --with-libvpx --with-theora
-
-#brew install pandoc
-
-# Lxml and Libxslt
-brew install libxml2
-brew install libxslt
-brew link libxml2 --force
-brew link libxslt --force
+sudo npm install -g cordova
+npm install phonegap -g
 
 # Install Heroku
 brew install heroku-toolbelt
@@ -156,9 +123,9 @@ brew cask install --appdir="/Applications" macdown
 brew cask install --appdir="/Applications" google-chrome
 brew cask install --appdir="/Applications" firefox
 brew cask install --appdir="/Applications" skype
-brew cask install --appdir="/Applications" slack
+#brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" dropbox
-brew cask install --appdir="/Applications" evernote
+#brew cask install --appdir="/Applications" evernote
 brew cask install --appdir="/Applications" teamviewer
 brew cask install --appdir="/Applications" handbrake
 brew cask install --appdir="/Applications" appcleaner
@@ -194,7 +161,7 @@ brew cask install --appdir="/Applications" microsoft-office
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
 # Remove outdated versions from the cellar.
-brew cleanup
+brew cleanup && brew update && brew upgrade
 
 # Installing private/non-supported homebrew apps | tap private repo
 # brew tap repo-name/homebrew-cask https://github.com/user/repo-name.git;
