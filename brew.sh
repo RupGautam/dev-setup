@@ -86,6 +86,8 @@ brew install speedtest_cli
 brew install id3tool
 brew install rtmpdump
 brew install ffmpeg --with-fdk-aac --with-libvorbis --with-libvpx --with-theora
+brew install glib xz gmp gnutls libgcrypt d-bus geoip  c-ares lua portaudio #required for wireshark to work well.
+brew install wireshark --with-qt #than only install wireshark 
 
 --------------------------------------------------------------------------------
 # Installing Python
@@ -164,7 +166,7 @@ brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" heroku-toolbelt
 brew cask install --appdir="/Applications" macdown
-#brew cask install --appdir="/Applications" mou #But I'm using macdown.
+#brew cask install --appdir="/Applications" mou #But I'm using macdown. :(
 brew cask install --appdir="/Applications" mysqlworkbench
 brew cask install --appdir="/Applications" sketch
 brew cask install --appdir="/Applications" genymotion
@@ -175,14 +177,24 @@ brew cask install --appdir="/Applications" genymotion
 # Development tools casks.
 --------------------------------------------------------------------------------
 brew cask install --appdir="/Applications" airmail-beta #very best email client so far.
-brew cask install --appdir="/Applications" 1password 
-brew cask install --appdir="/Applications" appcleaner
-brew cask install --appdir="/Applications" telegram
-brew cask install --appdir="/Applications" caffeine
-brew cask install --appdir="/Applications" teamviewer
-brew cask install --appdir="/Applications" carbon-copy-cloner
-brew cask install --appdir="/Applications"
-
+brew cask install --appdir="/Applications" 1password #my external memory
+brew cask install --appdir="/Applications" appcleaner #trash that shit app
+brew cask install --appdir="/Applications" telegram #I don't use it, but I can't delete it.
+brew cask install --appdir="/Applications" caffeine #yes please double double
+brew cask install --appdir="/Applications" teamviewer #for helping tech dummies
+brew cask install --appdir="/Applications" carbon-copy-cloner #just incase osx/I  screwed 
+brew cask install --appdir="/Applications" chitchat #Whatsapp desktop clone
+brew cask install --appdir="/Applications" firefox #no words
+brew cask install --appdir="/Applications" mac2imgur #upload screenshot to imgur
+brew cask install --appdir="/Applications" gpgtools #cuz snowden uses it
+brew cask install --appdir="/Applications" goofy # FB messanger for Desktop
+brew cask install --appdir="/Applications" silverlights #netflix and beinsports' living pills
+brew cask install --appdir="/Applications" dropbox #saves me some spaces
+brew cask install --appdir="/Applications" skype #hello mom!
+brew cask install --appdir="/Applications" spectacle #less messy windows
+brew cask install --appdir="/Applications" spotify #pumpit up
+brew cask install --appdir="/Applications" microsoft-office #get ur own license 
+brew cask install --appdir="/Applications" cyberduck #Hey! duck carry this to server2
 
 --------------------------------------------------------------------------------
 # Install quick look plugins.
