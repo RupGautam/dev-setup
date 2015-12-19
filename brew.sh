@@ -5,17 +5,30 @@
 # Ask for the administrator password upfront.
 sudo -v
 
+--------------------------------------------------------------------------------
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
+--------------------------------------------------------------------------------
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Check for Homebrew,
-# Install if we don't have it
+--------------------------------------------------------------------------------
+# Check for Homebrew and nstall if we don't have it
+--------------------------------------------------------------------------------
 if test ! $(which brew); then
-  echo "Installing homebrew..."
+  echo -e "---Installing homebrew---"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+--------------------------------------------------------------------------------
+# Install zsh and copy my .zshrc file.
+--------------------------------------------------------------------------------
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo -e "---Creating a symbolic link for .zshrc---"
+cp -r init/zshrc ~/.zshrc
+
+--------------------------------------------------------------------------------
 # Make sure we’re using the latest Homebrew.
+--------------------------------------------------------------------------------
 brew update
 
 # Upgrade any already-installed formulae.
@@ -25,170 +38,173 @@ brew upgrade --all
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
 sudo ln -s /usr/local/bin/gsha256sum /usr/local/bin/sha256sum
-
-# Install some other useful utilities like `sponge`.
 brew install moreutils
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
-# Install Bash 4.
+
+
+
+--------------------------------------------------------------------------------
+# Install latest bash and completion2
+--------------------------------------------------------------------------------
 brew install bash
 brew tap homebrew/versions
-brew tap homebrew/science
 brew install bash-completion2
-# We installed the new shell, now we have to activate it
-echo "Adding the newly installed shell to the list of allowed shells"
+# We installed the new shell, now we have to activate it.
+echo -e "---Adding the newly installed shell to the list of allowed shells---"
 # Prompts for password
 sudo bash -c 'echo /usr/local/bin/bash >> /etc/shells'
 # Change to the new shell, prompts for password
 chsh -s /usr/local/bin/bash
 
-# Install git and set global config variables
+--------------------------------------------------------------------------------
+# Install git and configure global variables.
+--------------------------------------------------------------------------------
 brew install git
 git.config --global user.name “Rup Gautam”
 git.config --global user.email “rup.gautam@yahoo.com”
 git.config --global credential.helper osxkeychain
 
-# Install `wget` with IRI support.
+--------------------------------------------------------------------------------
+#Installing some useful tools like wget,ffmpeg,rename etc.
+--------------------------------------------------------------------------------
 brew install wget --with-iri
+brew install nmap
+brew install dns2tcp
+brew install pngcheck
+brew install tcptrace
+brew install aircrack-ng
+brew install bfg
+brew install binutils
+brew install dark-mode
+brew install p7zip
+brew install unrar
+brew install pigz
+brew install pv
+brew install rename
+brew install speedtest_cli
+brew install id3tool
+brew install rtmpdump
+brew install ffmpeg --with-fdk-aac --with-libvorbis --with-libvpx --with-theora
 
-# Install Python
+--------------------------------------------------------------------------------
+# Installing Python
+--------------------------------------------------------------------------------
 brew install python
 brew install python3
 
+--------------------------------------------------------------------------------
+# Install node,npm & gems packages
+--------------------------------------------------------------------------------
+brew install node
+sudo npm install -g ios-sim #needs sudo
+sudo npm install -g yo #needs sudo
+sudo npm install -g generator-angular-fullstack #needs sudo
+sudo npm install -g grunt-cli #needs sudo
+sudo npm install -g bower #needs sudo
+echo -e "---Installing  gems too---"
+sudo gem install cocoapods
+sudo gem install cocoapods-keys
+
+--------------------------------------------------------------------------------
 # Install more recent versions of some OS X tools.
+--------------------------------------------------------------------------------
 brew install vim --override-system-vi
-brew install nano #should install 2.4+ 
-# update $PATH export PATH=/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/bin/
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 brew install homebrew/php/php55 --with-gmp
 
-# Install font tools.
+--------------------------------------------------------------------------------
+# Install useful font tools.
+--------------------------------------------------------------------------------
 brew tap bramstein/webfonttools
 brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
+echo -e "--- Downloading powerline fonts ---"
+git clone https://github.com/powerline/fonts.git && cd fonts
+sudo chmod +x install.sh && ./install.sh
+sudo rm -rf fonts
 
-# Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install aircrack-ng
-brew install bfg
-brew install binutils
-brew install htop
-brew install nmap
-brew install fdupes #find dup files
-brew install node
+--------------------------------------------------------------------------------
+# Install pdf tools.
+--------------------------------------------------------------------------------
+brew tap homebrew/x11 && brew update
+brew install xpdf
 
-# Install other useful binaries.
-brew install dark-mode
+--------------------------------------------------------------------------------
+# Install git and zipping tools.
+--------------------------------------------------------------------------------
 brew install git-lfs
 brew install git-flow
 brew install git-extras
 brew install imagemagick --with-webp
-brew install pv
-brew install rename
-brew install speedtest_cli
 brew install ssh-copy-id
 brew install tree
-brew install pkg-config libffi
-brew install id3tool
-brew install rtmpdump
-brew install ffmpeg --with-fdk-aac --with-libvorbis --with-libvpx --with-theora
-sudo npm install -g cordova
-npm install phonegap -g
 
-# Install Heroku
+--------------------------------------------------------------------------------
+# Install Heroku tools
+--------------------------------------------------------------------------------
 brew install heroku-toolbelt
 heroku update
 
-# Install Cask
+--------------------------------------------------------------------------------
+# Install cask
+--------------------------------------------------------------------------------
 brew install caskroom/cask/brew-cask
-brew tap caskroom/versions # need to add tap before installing different versions of apps. e.g: sublime-text2 sublime-text3
-brew update 
+brew update && brew cleanup
 
-# Core casks
-#brew cask install --appdir="/Applications" alfred
-brew cask install --appdir="/Applications" iterm2
-brew cask install --appdir="/Applications" java
-brew cask install --appdir="/Applications" xquartz
-
-# Development tool casks
+--------------------------------------------------------------------------------
+# Development tools casks.
+--------------------------------------------------------------------------------
 brew cask install --appdir="/Applications" sublime-text3
 brew cask install --appdir="/Applications" atom
 brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" heroku-toolbelt
 brew cask install --appdir="/Applications" macdown
-
-# Misc casks
-brew cask install --appdir="/Applications" google-chrome
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" skype
-#brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" dropbox
-#brew cask install --appdir="/Applications" evernote
-brew cask install --appdir="/Applications" teamviewer
-brew cask install --appdir="/Applications" handbrake
-brew cask install --appdir="/Applications" appcleaner
-brew cask install --appdir="/Applications" caffeine
-brew cask install --appdir="/Applications" chromecast
+#brew cask install --appdir="/Applications" mou #But I'm using macdown.
 brew cask install --appdir="/Applications" mysqlworkbench
-brew cask install --appdir="/Applications" mac2imgur
-brew cask install --appdir="/Applications" bittorrent
-brew cask install --appdir="/Applications" cyberduck
-brew cask install --appdir="/Applications" timemachinescheduler
-brew cask install --appdir="/Applications" wireshark
-brew cask install --appdir="/Applications" namechanger
 brew cask install --appdir="/Applications" sketch
-brew cask install --appdir="/Applications" microsoft-office
+brew cask install --appdir="/Applications" genymotion
+#brew cask install --appdir="/Applications" docker
+#brew cask install --appdir="/Applications" boot2docker
 
-# Most have CLIs'
-brew tap linode/cli && brew update #manage linode nodes from terminal
-brew install linode-cli #linodecli
-sudo npm install -g cloudflare-cli #manage domain names from terminal
-sudo gem install tugboat #manage DO droplets from terminal
+--------------------------------------------------------------------------------
+# Install quick look plugins.
+--------------------------------------------------------------------------------
+brew cask install qlstephen \
+                qlmarkdown \
+                quicklook-json \
+                qlprettypatch \
+                quicklook-csv \
+                betterzipql \
+                qlimagesize \
+                webpquicklook \
+                suspicious-package
 
-# Powerline fonts
-git clone https://github.com/powerline/fonts.git && cd fonts
-sudo chmod +x install.sh && ./install.sh
-sudo rm -rf fonts
-# Install fonts
-brew tap caskroom/fonts
-brew update && brew cleanup
-brew cask install font-roboto
-brew cask install font-roboto-slab
-brew cask install font-ubuntu
-brew cask install font-anonymous-pro
-brew cask install font-droid-sans
-#brew cask install font-droid-sans-mono
-#brew cask install font-droid-serif
-#brew cask install font-nexa
-brew cask install font-open-sans
-#brew cask install font-open-sans-condensed
-brew cask install font-source-code-pro
-
-# Install npm packages
-sudo npm install -g ios-sim
-sudo npm install -g yo
-sudo npm install -g generator-angular-fullstack
-sudo npm install -g grunt-cli
-sudo npm install -g bower
-
-# Install gems
-sudo gem install cocoapods
-sudo gem install cocoapods-keys
-
-# Install Xcode package manager
+--------------------------------------------------------------------------------
+#Install Xcode package manager.
+--------------------------------------------------------------------------------
 curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
 
-# Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
-
-# Remove outdated versions from the cellar.
+--------------------------------------------------------------------------------
+# Finishing up everthing. And removing outdated versions
+--------------------------------------------------------------------------------
 brew cleanup && brew update && brew upgrade
+echo -e "Done brewing this machine, Please wait ...."
 
-# Installing private/non-supported homebrew apps | tap private repo
-# brew tap repo-name/homebrew-cask https://github.com/user/repo-name.git;
-# brew cask install repo-name;
+
+
+--------------------------------------------------------------------------------
+#Thank you @donnemartin/dev-setup and many others.
+--------------------------------------------------------------------------------
+                ---------------------------------------
+                        ------------------------
+                                Rup Gautam
+                                ----------
+                                   ----
+
+
+
