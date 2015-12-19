@@ -168,9 +168,21 @@ brew cask install --appdir="/Applications" macdown
 brew cask install --appdir="/Applications" mysqlworkbench
 brew cask install --appdir="/Applications" sketch
 brew cask install --appdir="/Applications" genymotion
-brew cask install --appdir="/Applications" airmail-beta #very best email client so far.
 #brew cask install --appdir="/Applications" docker
 #brew cask install --appdir="/Applications" boot2docker
+
+--------------------------------------------------------------------------------
+# Development tools casks.
+--------------------------------------------------------------------------------
+brew cask install --appdir="/Applications" airmail-beta #very best email client so far.
+brew cask install --appdir="/Applications" 1password 
+brew cask install --appdir="/Applications" appcleaner
+brew cask install --appdir="/Applications" telegram
+brew cask install --appdir="/Applications" caffeine
+brew cask install --appdir="/Applications" teamviewer
+brew cask install --appdir="/Applications" carbon-copy-cloner
+brew cask install --appdir="/Applications"
+
 
 --------------------------------------------------------------------------------
 # Install quick look plugins.
