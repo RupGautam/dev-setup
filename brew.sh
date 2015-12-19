@@ -168,6 +168,7 @@ brew cask install --appdir="/Applications" macdown
 brew cask install --appdir="/Applications" mysqlworkbench
 brew cask install --appdir="/Applications" sketch
 brew cask install --appdir="/Applications" genymotion
+brew cask install --appdir="/Applications" airmail-beta #very best email client so far.
 #brew cask install --appdir="/Applications" docker
 #brew cask install --appdir="/Applications" boot2docker
 
