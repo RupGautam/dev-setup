@@ -748,8 +748,14 @@ defaults write com.divisiblebyzero.Spectacle ShowPrefsOnNextStart -bool false
 ###############################################################################
 # Sublime Text                                                                #
 ###############################################################################
-
-# Install Sublime Text settings
+# Install Sublime Text 3 Package Manager
+mkdir -p ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/
+if [ ! -f "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package" ]; then
+  # http://stackoverflow.com/questions/19529999/add-package-control-in-sublime-text-3-through-the-command-line
+  echo "Installing Sublime Text 3 Package Manager"
+  wget https://sublime.wbond.net/Package%20Control.sublime-package -P "$HOME/Library/Application Support/Sublime Text 3/Installed Packages/"
+fi
+# Copying my preference settings
 cp -r init/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
 
 ###############################################################################
