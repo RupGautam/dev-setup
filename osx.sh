@@ -514,7 +514,7 @@ defaults write com.apple.spotlight orderedItems -array \
     '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
     '{"enabled" = 1;"name" = "DIRECTORIES";}' \
     '{"enabled" = 1;"name" = "PDF";}' \
-    '{"enabled" = 1;"name" = "FONTS";}' \
+    '{"enabled" = 0;"name" = "FONTS";}' \
     '{"enabled" = 1;"name" = "DOCUMENTS";}' \
     '{"enabled" = 0;"name" = "MESSAGES";}' \
     '{"enabled" = 1;"name" = "CONTACT";}' \
@@ -526,7 +526,7 @@ defaults write com.apple.spotlight orderedItems -array \
     '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
     '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
     '{"enabled" = 0;"name" = "SOURCE";}' \
-    '{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+    '{"enabled" = 1;"name" = "MENU_DEFINITION";}' \
     '{"enabled" = 0;"name" = "MENU_OTHER";}' \
     '{"enabled" = 1;"name" = "MENU_CONVERSION";}' \
     '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
