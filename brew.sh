@@ -79,7 +79,7 @@ brew install binutils
 brew install dark-mode
 brew install p7zip
 brew install unrar
-brew install pigz
+#brew install pigz
 brew install pv
 brew install rename
 brew install speedtest_cli
@@ -88,6 +88,11 @@ brew install rtmpdump
 brew install ffmpeg --with-fdk-aac --with-libvorbis --with-libvpx --with-theora
 brew install glib xz gmp gnutls libgcrypt d-bus geoip  c-ares lua portaudio #required for wireshark to work well.
 brew install wireshark --with-qt #than only install wireshark 
+brew install ngrep 
+brew install powerline
+brew install macvim
+brew install exiftool
+brew install jo #cmd json 
 
 #--------------------------------------------------------------------------------
 # Installing Python
@@ -109,7 +114,7 @@ grep -q "$LINE" ~/.extra || echo "$LINE" >> ~/.extra
 brew install node
 sudo npm install -g ios-sim #needs sudo
 sudo npm install -g yo #needs sudo
-sudo npm install -g generator-angular-fullstack #needs sudo
+sudo npm install -g ionic
 sudo npm install -g grunt-cli #needs sudo
 sudo npm install -g bower #needs sudo
 echo -e "---Installing  gems too---"
@@ -123,7 +128,6 @@ brew install vim --override-system-vi
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
-brew install homebrew/php/php55 --with-gmp
 
 #--------------------------------------------------------------------------------
 # Install useful font tools.
@@ -174,12 +178,13 @@ brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" vagrant
 brew cask install --appdir="/Applications" heroku-toolbelt
 brew cask install --appdir="/Applications" macdown
-#brew cask install --appdir="/Applications" mou #But I'm using macdown. :(
 brew cask install --appdir="/Applications" mysqlworkbench
 brew cask install --appdir="/Applications" sketch
-brew cask install --appdir="/Applications" genymotion
-#brew cask install --appdir="/Applications" docker
-#brew cask install --appdir="/Applications" boot2docker
+brew cask install --appdir="/Applications" flux
+brew cask install --appdir="/Applications" xamarin-studio
+echo -e "Install xamarin SDK for iOS and Android manually from website"
+
+#brew cask install --appdir="/Applications" genymotion
 
 #--------------------------------------------------------------------------------
 # Development tools casks.
